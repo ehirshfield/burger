@@ -1,0 +1,20 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "A burger app using express, node.js, handlebars, and orm",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehirshfield/burger.git"
+  },
+  "author": "Eric",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ehirshfield/burger/issues"
+  },
+  "homepage": "https://github.com/ehirshfield/burger#readme"
+}
