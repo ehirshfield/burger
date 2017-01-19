@@ -12,8 +12,13 @@ var orm = {
   },
 
   insertOne: function(tableChoice, firstCol, firstValue, cb){
-    var query = "INSERT INTO ?? (?) VALUES (?);";
-    connection.query(query, [tableChoice, firstCol, firstValue], function(err, result){
+    var query = "INSERT INTO " + tableChoice;
+      query += " (";
+      query += firstCol.toString();
+      query += ") ";
+      query += "VALUES (?)";
+
+    connection.query(query, [firstValue], function(err, result){
       if (err){
         throw err;
       }
@@ -22,8 +27,16 @@ var orm = {
   },
 
   updateOne: function(tableChoice, firstCol, firstValue, secondCol, secondValue, cb){
-    var query = "UPDATE ?? SET ? = ? WHERE ? = ?;";
-    connection.query(query, [tableChoice, firstCol, firstValue, secondCol, secondValue], function(err, result){
+    // var query = "UPDATE ?? SET ? = ? WHERE ? = ?;";
+    var query = "UPDATE " + tableChoice;
+      query += " SET " + firstCol;
+      query += " = ";
+      query += firstValue + " WHERE ";
+      query += secondCol + " = ?";
+    var secondValue = parseInt(secondValue);
+    console.log(query);
+
+    connection.query(query, [secondValue], function(err, result){
       if (err){
         throw err;
       }

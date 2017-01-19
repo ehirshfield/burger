@@ -6,6 +6,7 @@
       {{this.burger_name}}
 
       <form action="/{{this.id}}?_method=PUT" method="POST">
+        <input type="hidden" name="burgerName" value="{{this.burger_name}}">
         <button type="submit">Devour It!</button>
       </form>
     {{/unless}}
@@ -15,7 +16,7 @@
 <div>
   {{#each burger}}
     {{#if this.devoured}}
-      {{this.burger_name}}
+      <div>{{this.id}}. {{this.burger_name}}</div>
 
     {{/if}}
   {{/each}}
