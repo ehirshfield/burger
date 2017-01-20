@@ -1,32 +1,64 @@
-<h1>Eat-Da-Burger</h1>
-
-<div>
-  {{#each burger}}
-    {{#unless this.devoured}}
-      {{this.burger_name}}
-
-      <form action="/{{this.id}}?_method=PUT" method="POST">
-        <input type="hidden" name="burgerName" value="{{this.burger_name}}">
-        <button type="submit">Devour It!</button>
-      </form>
-    {{/unless}}
-  {{/each}}
-</div>
-
-<div>
-  {{#each burger}}
-    {{#if this.devoured}}
-      <div>{{this.id}}. {{this.burger_name}}</div>
-
-    {{/if}}
-  {{/each}}
-</div>
-
-
-<form action="/" method="POST">
-  <div class="form-group">
-    <textarea rows="4" cols="50" name="name"></textarea>
+<div class="container">
+  <div class="row">
+    <div class="custom-image">
+      <img src="/assets/img/burger.png">
+    </div>
   </div>
+</div>
+<div class="container">
+  <h1>Eat-Da-Burger</h1>
+</div>
+<div class ="container">
+  <div class="row">
+    <div class="col-lg-4">
+      {{#each burger}}
+        {{#unless this.devoured}}
+        <div class="custom-columns to-be-eaten">
+            <p>{{this.id}}. {{this.burger_name}}</p>
 
-  <button type="submit">Add Burger</button>
-</form>
+          </div>
+          {{/unless}}
+        {{/each}}
+        </div>
+        <div class="col-lg-4">
+            {{#each burger}}
+              {{#unless this.devoured}}
+              <div class="custom-columns">
+                <form action="/{{this.id}}?_method=PUT" method="POST">
+
+                  <input type="hidden" name="burgerName" value="{{this.burger_name}}">
+                  <button type="submit">Devour It!</button>
+                </form>
+              </div>
+            {{/unless}}
+          {{/each}}
+        </div>
+
+    <div class="col-lg-4">
+
+        {{#each burger}}
+          {{#if this.devoured}}
+          <div class="custom-columns eaten">
+            <p>{{this.id}}. {{this.burger_name}}</p>
+            </div>
+          {{/if}}
+        {{/each}}
+
+
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+<div class="container">
+  <div class="custom-textarea">
+    <form action="/" method="POST">
+      <div class="form-group">
+        <textarea rows="4" cols="50" name="name"></textarea>
+      </div>
+
+      <button type="submit">Order a Burger</button>
+    </form>
+  </div>
+</div>
