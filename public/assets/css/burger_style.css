@@ -1,5 +1,5 @@
 body {
-  background-color: lime;
+  background-image: url("../img/restaurant_icons.png");
 }
 
 h1 {
@@ -20,12 +20,16 @@ h1 {
 
 .to-be-eaten {
   border: 1px solid black;
-  height: 35px;
+  height: 40px;
   width: 100%;
 }
 
 .eaten {
   border: 1px solid black;
-  height: 35px;
+  height: 40px;
   width: 100%;
+}
+
+.column-headers{
+  text-align: center;
 }

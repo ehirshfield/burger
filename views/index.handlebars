@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="custom-image">
-      <img src="/assets/img/burger.png">
+      <img src="/assets/img/burger.png" width=300px height=300px>
     </div>
   </div>
 </div>
@@ -11,6 +11,7 @@
 <div class ="container">
   <div class="row">
     <div class="col-lg-4">
+      <h4 class="column-headers">Order Up!</h4>
       {{#each burger}}
         {{#unless this.devoured}}
         <div class="custom-columns to-be-eaten">
@@ -21,6 +22,7 @@
         {{/each}}
         </div>
         <div class="col-lg-4">
+          <br><br>
             {{#each burger}}
               {{#unless this.devoured}}
               <div class="custom-columns">
@@ -30,12 +32,13 @@
                   <button type="submit">Devour It!</button>
                 </form>
               </div>
+              <br>
             {{/unless}}
           {{/each}}
         </div>
 
     <div class="col-lg-4">
-
+      <h4 class="column-headers">Another Satisfied Customer</h4>
         {{#each burger}}
           {{#if this.devoured}}
           <div class="custom-columns eaten">
@@ -62,3 +65,4 @@
     </form>
   </div>
 </div>
+<br><br>
